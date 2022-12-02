@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  # Sevice for Node
+  node:
+    build: .
+    container_name: blogs_api
+    # `docker run -t`
+    tty: true
+    # `docker run -i`
+    stdin_open: true
+    # Replaces the Node image default command 
+    command: bash
+    restart: always
+    working_dir: /app
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_HOST: db # Service name as decribed below
+      JWT_SECRET: secretJWT # Your JWT secret
+      API_HOST: 'node'
+      API_PORT: 3000
+      NODE_ENV: 'development'
+    networks:
+      - blogs_api_net
+
+  # DB service
+  db:
+    container_name: blogs_api_db
+    image: mysql:8.0.23
+    platform: linux/x86_64
+    restart: always
+    ports:
+      - 3306:3306
+      - 33060:33060
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - blogs_api_net
+networks:
+  blogs_api_net:
+    driver: bridge

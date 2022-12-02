@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./const.js" defer></script>
+    <script src="./Helpers/fetchItem.js" defer></script>
+    <script src="./Helpers/fetchProducts.js" defer></script>
+    <script src="./Helpers/saveCartItems.js" defer></script>
+    <script src="./Helpers/getSavedCartItems.js" defer></script>
+    <script src="./category.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo_content">
+        <div class="bar-logo">
+          <i class='bx bx-menu' id="btn-menu"></i>
+        </div>
+        </div>
+      </div>
+      <div class="container-title">
+        <span class="title"><strong>trybe</strong>shopping</span>
+      </div>
+      <div class="search-container">
+        <input type="text" name="" id="input-product" placeholder="Search...">
+        <i class='bx bx-search' id="search"></i>
+        </input>
+      </div>
+      <div class="select-cart">
+        <div class="count-div">
+          <span class="count">0</span>
+        </div>
+        <i class='bx bxs-cart'></i>
+      </div>
+    </header>
+    <section class="loading-animation">
+      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </section>
+    <section class="container">
+      <div class="sidebar">
+        <ul class="nav_list">
+          <li>
+            <a href="">
+              <i class='bx bxs-home'></i>
+              <span class="home">Home</span>
+            </a>
+          </li>
+          <li class="li-category">
+            <i class='bx bxs-sort-alt' ></i>
+            <span class="category">Categorias</span>
+          </li>
+        </ul>
+        <div class="category-container">
+          <ul class="category-all">
+            <li class="category-items">
+              <i class='bx bx-caret-right' ></i>
+              <input class="category-span" type="button" value="Carros">
+            </li>
+            <li class="category-items">
+              <i class='bx bx-caret-right' ></i>
+              <span class="category-span">Consoles</span>
+            </li>
+            <li class="category-items">
+              <i class='bx bx-caret-right' ></i>
+              <span class="category-span">Coputadores</span>
+            </li>
+            <li class="category-items">
+              <i class='bx bx-caret-right' ></i>
+              <span class="category-span">Celulares</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <section class="items"></section>
+      <section class="cart">
+        <div>
+          <ol class="cart__items"></ol>
+        </div>
+        <div class="cart-price-wrap">
+          <span class="total-price"></span>
+          <div class="empty-div">
+            <button class="empty-cart">Esvaziar Carrinho</button>
+            <i class='bx bxs-trash'></i>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer class="footer"></footer>
+  </body>
+</html>

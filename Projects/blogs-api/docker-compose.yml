@@ -21,7 +21,7 @@ services:
       - 3000:3000
     environment:
       MYSQL_USER: root
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: yourpassword
       MYSQL_HOST: db # Service name as decribed below
       JWT_SECRET: secretJWT # Your JWT secret
       API_HOST: 'node'
@@ -40,7 +40,7 @@ services:
       - 3306:3306
       - 33060:33060
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: yourmysqlpassword
     networks:
       - blogs_api_net
 networks:
